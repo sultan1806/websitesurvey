@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sultan</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #00f2ff; color: #000000; }
+        h1 { color: #000000; }
+        .container { margin-top: 50px; }
+        button { padding: 10px 20px; border: none; background-color: #000000; color: silver; cursor: pointer; border-radius: 5px; }
+        button:hover { background-color: #333333; }
+        input, select { padding: 8px; margin: 5px; border-radius: 5px; border: none; width: 200px; }
+        #output { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Halo, Selamat Datang di Website Sultan!</h1>
+        <p>Silahkan isi data diri!</p>
+
+        <form id="dataForm">
+            <input type="text" id="nama" placeholder="Nama" required><br>
+            <input type="number" id="umur" placeholder="Umur" required><br>
+            <input type="date" id="tanggallahir" required><br>
+            <input type="text" id="asalSekolah" placeholder="Asal Sekolah" required><br>
+            <button type="button" onclick="tampilkanData()">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function tampilkanData() {
+            // Ambil data dari input
+            const nama = document.getElementById('nama').value;
+            const umur = document.getElementById('umur').value;
+            const tanggallahir = document.getElementById('tanggallahir').value;
+            const asalSekolah = document.getElementById('asalSekolah').value;
+
+            // Cek jika semua field terisi
+            if (nama && umur && tanggallahir && asalSekolah) {
+                // Tampilkan data
+                document.getElementById('output').innerHTML = `
+                    <p>Hai, <strong>${nama}</strong></p>
+                    <p>Terimakasih
+                `;
+            } else {
+                alert('isi semua data yaa!');
+            }
+        }
+    </script>
+
+</body>
+</html>
